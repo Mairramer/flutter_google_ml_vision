@@ -32,8 +32,7 @@ class GoogleVision {
   GoogleVision._();
 
   @visibleForTesting
-  static const MethodChannel channel =
-      MethodChannel('plugins.flutter.brianmtully.com/google_ml_vision');
+  static const MethodChannel channel = MethodChannel('plugins.flutter.brianmtully.com/google_ml_vision');
 
   @visibleForTesting
   static int nextHandle = 0;
@@ -47,34 +46,11 @@ class GoogleVision {
   /// ```
   static final GoogleVision instance = GoogleVision._();
 
-  /// Creates an instance of [BarcodeDetector].
-  BarcodeDetector barcodeDetector([BarcodeDetectorOptions? options]) {
-    return BarcodeDetector._(
-      options ?? const BarcodeDetectorOptions(),
-      nextHandle++,
-    );
-  }
-
   /// Creates an instance of [FaceDetector].
   FaceDetector faceDetector([FaceDetectorOptions? options]) {
     return FaceDetector._(
       options ?? const FaceDetectorOptions(),
       nextHandle++,
-    );
-  }
-
-  /// Creates an on device instance of [ImageLabeler].
-  ImageLabeler imageLabeler([ImageLabelerOptions? options]) {
-    return ImageLabeler._(
-      options: options ?? const ImageLabelerOptions(),
-      handle: nextHandle++,
-    );
-  }
-
-  /// Creates an instance of [TextRecognizer].
-  TextRecognizer textRecognizer() {
-    return TextRecognizer._(
-      handle: nextHandle++,
     );
   }
 }
@@ -232,9 +208,7 @@ class GoogleVisionImageMetadata {
         'height': size.height,
         'rotation': _imageRotationToInt(rotation),
         'rawFormat': rawFormat,
-        'planeData': planeData
-            ?.map((GoogleVisionImagePlaneMetadata plane) => plane._serialize())
-            .toList(),
+        'planeData': planeData?.map((GoogleVisionImagePlaneMetadata plane) => plane._serialize()).toList(),
       };
 }
 
