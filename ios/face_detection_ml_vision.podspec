@@ -7,7 +7,7 @@ pubspec = YAML.load_file(File.join('..', 'pubspec.yaml'))
 libraryVersion = pubspec['version'].gsub('+', '-')
 
 Pod::Spec.new do |s|
-  s.name             = 'google_ml_vision'
+  s.name             = 'face_detection_ml_vision'
   s.version          = libraryVersion
   s.summary          = 'Flutter plugin for Google ML Kit'
   s.description      = <<-DESC

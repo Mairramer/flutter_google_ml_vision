@@ -4,9 +4,9 @@
 
 import 'dart:ui';
 
+import 'package:face_detection_ml_vision/google_ml_vision.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:google_ml_vision/google_ml_vision.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
